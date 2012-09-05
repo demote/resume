@@ -1,0 +1,144 @@
+%% start of file `template-zh.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv 主题
+\moderncvstyle{casual}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
+\moderncvcolor{blue}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
+%\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
+
+% 字符编码
+\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+\usepackage{CJKutf8}
+
+% 调整页面出血
+\usepackage[scale=0.85]{geometry}
+\geometry{left=1.5cm,right=1.5cm,top=1.0cm,bottom=1.5cm}
+%\addtolength{\textheight}{5cm}
+%\addtolength{\textwidth}{2cm}
+%\setlength{\hintscolumnwidth}{3cm}           % 如果你希望改变日期栏的宽度
+
+% 个人信息
+\firstname{}
+\familyname{姜继}
+%\title{resume}                      % 可选项、如不需要可删除本行
+%\address{中科院计算所}{}             % 可选项、如不需要可删除本行
+\mobile{135-010-21029}                         % 可选项、如不需要可删除本行
+%\phone{010-62601025}                          % 可选项、如不需要可删除本行
+%\fax{+3~(456)~789~012}                            % 可选项、如不需要可删除本行
+\email{jiangji.cn@gmail.com}                    % 可选项、如不需要可删除本行
+%\homepage{www.xialongli.com}                  % 可选项、如不需要可删除本行
+%\extrainfo{附加信息 (可选项)}                  % 可选项、如不需要可删除本行
+%\photo[64pt][0.4pt]{picture}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+%\quote{引言(可选项)}                           % 可选项、如不需要可删除本行
+
+
+% 显示索引号;仅用于在简历中使用了引言
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% 分类索引
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            内容
+%----------------------------------------------------------------------------------
+\begin{document}
+\begin{CJK}{UTF8}{kai}                       % 详情参阅CJK文件包
+\maketitle
+
+\vspace{-1.4cm}
+\parbox[t]{6cm}{\textbf{中科院计算所}
+}
+\parbox[t]{7cm}{\textbf{Mobile:} 135-010-21029
+}
+\parbox[t]{6cm}{\textbf{E-mail:} jiangji.cn@gmail.com
+}
+
+\section{求职意向:}
+\cventry{}{腾讯-后台开发-技术工程组}{}{}{}{}
+
+\vspace{-0.3cm}
+\section{教育背景}
+%\cventry{年 -- 年}{学位}{院校}{城市}{\textit{成绩}}{说明}  % 第3到第6编码可留白
+\cventry{2010--至今}{硕士学位}{计算机系统结构}{中国科学院计算技术研究所}{}{}
+\cventry{2006--2010}{学士学位}{微电子与纳电子系}{清华大学}{}{}
+
+
+%\section{毕业论文}
+%\cvitem{题目}{\emph{题目}}
+%\cvitem{导师}{导师}
+%\cvitem{说明}{\small 论文简介}
+\vspace{-0.3cm}
+\section{主要项目经历}
+\cventry{2012/5 -- 至今}{基于SSD的异构多级缓存的研究}{\quad 职责:设计者,主要实现者}{}{}{
+\begin{itemize}%
+\item {\normalsize 针对SSD性价比高及读写性能失衡等特点,通过分析与测试多种缓存替换算法与预取算法管理异构缓存系统(DRAM与SSD)的结果与原因,提出为SSD设计缓存替换算法的原则并设计实现了新的缓存管理算法,减少SSD 的写入量同时提高命中率,有效减少执行时间;}
+\item \normalsize 负责多级异构缓存模拟器的详细设计,实现并调试缓存模拟器及多种缓存替换与预取算法(包括LRU,LIRS,MQ,Linux,AMP等),使用MSR等多种负载进行测试与分析.
+\end{itemize}}
+
+\vspace{0.2cm}
+
+\cventry{2011/10 -- 2012/5}{虚拟机镜像管理系统}{\quad 职责:主要设计者,合作实现者}{}{}{
+\begin{itemize}%
+\item \normalsize 针对虚拟化生产环境中对磁盘镜像安全性与系统稳定性的特殊需求,通过综合调研测试,在OCFS2与GFS2中选定OCFS2作为原型开发虚拟机镜像管理系统;
+\item \normalsize 负责前期对OCFS2源代码分析调研并对性能及稳定性进行测试;负责详细设计并实现了虚拟磁盘锁以达到保护虚拟机磁盘镜像;参与设计及调试故障检测与恢复等可靠性模块的改进;关键技术包括:1)基于分布式锁管理(DLM)模块添加新锁并在关键路径进行检查. 2)重新设计高可用(Keepalive)状态机,结合磁盘心跳与网络心跳,提高故障检测效率.
+\end{itemize}}
+
+\vspace{0.2cm}
+
+\cventry{2011/4 -- 2011/11}{基于SSD的HDFS元数据管理}{\quad 职责:主要设计者,主要实现者}{}{}{
+\begin{itemize}%
+\item \normalsize 针对Hadoop中HDFS采用树型全内存结构管理文件系统元数据的不足(元数据容量受限,可扩展性差),使用哈希索引的方式实现了基于DRAM与SSD混合存储的元数据管理模块, 以略微降低峰值性能为代价大大提高系统的可扩展性,同时减少系统的故障恢复时间;
+\item \normalsize 负责详细设计与实现元数据管理模块,关键技术包括:1)通过在内存中存储文件名指纹等方式压缩单条记录内存开销. 2)通过拼装哈希值、存储父节点号等措施减少哈希冲突,有效减少SSD读放大效应. 3)以元数据盒方式管理元数据,采用COW方式更新,保证一致性同时降低锁开销并提高SSD利用效率.
+\end{itemize}}
+
+\vspace{-0.3cm}
+\section{个人技能}
+\cvitem{编程}{掌握Linux环境下C/C++编程,有一定Linux内核编码与调试经验,熟悉本地/分布式文件系统,有企业项目合作经验与分布式文件系统开发经验,对缓存算法有深刻理解}
+\cvitem{算法}{优秀的算法与数据结构基础,熟悉HashTable、Bloomfilter等数据结构}
+\cvitem{工具}{熟悉Shell编程,熟练使用GDB, Vim, Gnuplot, AWK, \LaTeX{}, MS Office等工具}
+\cvitem{语言}{通过CET4/6((600,560)/710),TOEFL(107/120),GRE(1380/1600), 具有优秀的英文阅读、交流与写作能力}
+
+\vspace{-0.4cm}
+\section{主要社会活动与爱好}
+\vspace{-0.1cm}
+\cvlistitem{大学期间参加"清华大学爱心公益协会",曾任副会长并多次参与/组织"毕业捐衣"等公益活动}
+\cvlistitem{热衷运动,喜爱篮球、羽毛球、乒乓球、足球等并多次代表班级参加各项比赛}
+%\cvlistitem{喜欢读书,尤其历史、武侠、科幻等题材}
+
+
+%\renewcommand{\listitemsymbol}{-}             % 改变列表符号
+%
+%\section{其他 2}
+%\cvlistdoubleitem{项目 1}{项目 4}
+%\cvlistdoubleitem{项目 2}{项目 5\cite{book1}}
+%\cvlistdoubleitem{项目 3}{}
+
+% 来自BibTeX文件但不使用multibib包的出版物
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
+
+% 来自BibTeX文件并使用multibib包的出版物
+%\section{出版物}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
+
+\clearpage\end{CJK}
+\end{document}
+
+
+%% 文件结尾 `template-zh.tex'.
